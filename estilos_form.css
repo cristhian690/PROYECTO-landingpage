@@ -5,6 +5,7 @@
   width: 100%;
   z-index: 1000;
   background: rgba(26, 26, 46, 0.95);
+  
   padding: 14px 32px;
   display: flex;
   align-items: center;
@@ -75,6 +76,7 @@
   font-size: 26px;
   color: #f5a623;
   cursor: pointer;
+  
 }
 
 /* RESPONSIVE NAVBAR */
