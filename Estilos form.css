@@ -1,88 +1,109 @@
-.formulario {
-  max-width: 560px;
-  margin: 0 auto;
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(26, 26, 46, 0.95);
+  padding: 14px 32px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-.form-grupo {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+#navbar.scrolled {
+  background: #1a1a2e;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 
-.form-grupo label {
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f5a623;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links li a {
+  color: #ccc;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  color: #ccc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: color 0.3s, background 0.3s;
 }
 
-.form-grupo input,
-.form-grupo select,
-.form-grupo textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: #16213e;
-  border: 1px solid #2a2a4a;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  outline: none;
+.nav-links li a:hover {
+  color: #f5a623;
+  background: rgba(245, 166, 35, 0.1);
 }
 
-.form-grupo input::placeholder,
-.form-grupo textarea::placeholder {
-  color: #666;
+.btn-nav {
+  background: #f5a623 !important;
+  color: #1a1a2e !important;
+  padding: 8px 20px !important;
+  border-radius: 20px !important;
+  font-weight: 600 !important;
 }
 
-.form-grupo select option {
-  background: #16213e;
-  color: #fff;
+.btn-nav:hover {
+  background: #e09420 !important;
+  transform: translateY(-1px);
 }
 
-.form-grupo input:focus,
-.form-grupo select:focus,
-.form-grupo textarea:focus {
-  border-color: #f5a623;
-  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
-}
-
-.form-grupo textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.btn-form {
-  width: 100%;
-  padding: 14px;
-  background: #f5a623;
-  color: #1a1a2e;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
+/* HAMBURGUESA */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: #f5a623;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  letter-spacing: 0.5px;
 }
 
-.btn-form:hover {
-  background: #e09420;
-  transform: translateY(-2px);
-}
+/* RESPONSIVE NAVBAR */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #1a1a2e;
+    padding: 20px;
+    gap: 4px;
+    border-top: 1px solid #333;
+  }
 
-.btn-form:active {
-  transform: translateY(0);
-}
+  .nav-links.activo {
+    display: flex;
+  }
 
-.form-exito {
-  text-align: center;
-  color: #a8e6cf;
-  font-size: 15px;
-  font-weight: 500;
-  min-height: 24px;
+  .nav-links li a {
+    font-size: 16px;
+    padding: 10px 16px;
+    display: block;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
