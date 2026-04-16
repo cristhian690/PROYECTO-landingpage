@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tu mejor amigo merece lo mejor</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="estilos_navbar.css" />
+  <link rel="stylesheet" href="estilos_form.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="imagen/icono.png" alt="logo" class="nav-icon" />
+      ContigoSP
+    </div>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </nav>
+
+  
+  <section id="inicio" class="hero">
+    <div class="hero-content animate-fade">
+      <h1>Tu mejor amigo<br><span>merece lo mejor</span></h1>
+      <p>Cuidamos, mimamos y queremos a tu mascota como si fuera nuestra. Servicios de calidad para perros, gatos y más.</p>
+      <a href="#servicios" class="btn-hero">Ver servicios</a>
+      <a href="#contacto" class="btn-hero btn-outline">Contáctanos</a>
+    </div>
+    <div class="hero-img animate-slide">
+     <img src="imagen/foto.jpg" alt="Prueba con salida de carpeta">
+    </div>
+  </section>
+
+  
+  <section id="nosotros" class="seccion seccion-clara">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">¿Quiénes somos?</h2>
+      <div class="nosotros-grid">
+        <div class="nosotros-texto">
+          <p>No somos una gran corporación, somos un grupo de voluntarios y amantes de los animales que decidió dedicar su tiempo a lo que más importa: el bienestar de quienes no tienen voz. Nuestro proyecto nace de una idea simple pero poderosa: ayudar a que cada mascota viva una vida digna y feliz.</p>
+          <div class="stats">
+            <div class="stat"><strong>150+</strong><span>Mascotas alimentadas</span></div>
+            <div class="stat"><strong>200+</strong><span>Perritos salvados</span></div>
+            <div class="stat"><strong>99%</strong><span>Huellitas agradecidas</span></div>
+          </div>
+        </div>
+        <div class="nosotros-img">
+          <img src="imagen/nosotros.png" alt="nosotros" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="servicios" class="seccion seccion-oscura">
+    <div class="contenedor">
+      <h2 class="titulo-seccion claro">Cómo dedicamos nuestro tiempo a ayudar</h2>
+      <div class="cards-grid">
+        <div class="card animate-card">
+          <div class="card-icon">🛁</div>
+          <h3>Baño y cuidado con amor</h3>
+          <p>Dejamos a la mascota limpia y cómoda, usando productos suaves y mucho cariño.</p>
+        </div>
+        <div class="card animate-card">
+          <div class="card-icon">🏥</div>
+          <h3>Apoyo en salud</h3>
+          <p>Ayudamos con chequeos básicos, vacunas y coordinamos atención médica cuando es necesario.</p>
+        </div>
+        <div class="card animate-card">
+          <div class="card-icon">🏡</div>
+          <h3>Refugio y compañía</h3>
+          <p>Brindamos un espacio seguro y compañía para que no se sientan solos en momentos difíciles.</p>
+        </div>
+        <div class="card animate-card">
+          <div class="card-icon">🦮</div>
+          <h3>Tiempo de juego y paseos</h3>
+          <p>Aseguramos su ejercicio diario con paseos seguros para que se diviertan y distraigan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="galeria" class="seccion seccion-clara">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">Galería</h2>
+      <div class="video-wrap">
+        <video controls>
+          <source src="imagen/video.mp4" type="video/mp4" />
+          Tu navegador no soporta la reproducción de video.
+        </video>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="blog" class="seccion seccion-oscura">
+    <div class="contenedor">
+      <h2 class="titulo-seccion claro">Blog y consejos</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="imagen/cuidado.png" alt="blog 1" />
+          <h4>5 consejos para cuidar a tu perro</h4>
+          <p>Descubre los mejores hábitos para mantener a tu perro sano y feliz todos los días.</p>
+        </div>
+        <div class="blog-card">
+          <img src="imagen/juntos.png" alt="blog 2" />
+          <h4>Alimentación ideal para gatos</h4>
+          <p>Todo lo que necesitas saber sobre la nutrición de tu felino.</p>
+        </div>
+        <div class="blog-card">
+          <img src="imagen/vacuna.png" alt="blog 3" />
+          <h4>Vacunas que no pueden faltar</h4>
+          <p>Guía completa del calendario de vacunación para perros y gatos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contacto" class="seccion seccion-clara">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">Contáctanos</h2>
+      <form class="formulario" id="formulario" onsubmit="enviarFormulario(event)">
+        <div class="form-grupo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-grupo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+        </div>
+        <div class="form-grupo">
+          <label for="mascota">Tipo de mascota</label>
+          <select id="mascota" name="mascota">
+            <option value="">Selecciona una opción</option>
+            <option value="perro">Perro</option>
+            <option value="gato">Gato</option>
+            <option value="conejo">Conejo</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-grupo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+        </div>
+        <button type="submit" class="btn-form">Enviar mensaje</button>
+        <p id="form-exito" class="form-exito"></p>
+      </form>
+    </div>
+  </section>
+
+  <script src="animacion.js"></script>
+</body>
+</html>
