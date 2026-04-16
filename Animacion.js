@@ -1,28 +1,22 @@
-// Función para manejar las animaciones de revelado (Scroll Reveal)
 const activarAnimaciones = () => {
-    // Seleccionamos todas las secciones y las tarjetas del blog/servicios
     const elementos = document.querySelectorAll('section, .card, .blog-card, .nosotros-grid');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // Si el elemento entra en el campo de visión
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
     }, {
-        threshold: 0.15 // Se activa cuando el 15% del elemento es visible
+        threshold: 0.15
     });
 
     elementos.forEach(el => {
-        // Primero aseguramos que tengan la clase que los oculta
         el.classList.add('hidden-fade');
-        // Los ponemos a observar
         observer.observe(el);
     });
 };
 
-// Funcionalidad para el menú hamburguesa (Responsive)
 const configurarMenu = () => {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -34,8 +28,32 @@ const configurarMenu = () => {
     }
 };
 
-// Ejecutar cuando el documento esté listo
+const configurarNavbarScroll = () => {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+};
+
+
+const enviarFormulario = (event) => {
+    event.preventDefault();
+    const exito = document.getElementById('form-exito');
+    if (exito) {
+        exito.textContent = ' ¡Mensaje enviado! Te contactaremos pronto.';
+        document.getElementById('formulario').reset();
+        setTimeout(() => { exito.textContent = ''; }, 5000);
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     activarAnimaciones();
     configurarMenu();
+    configurarNavbarScroll();
 });
